@@ -1,7 +1,5 @@
 from tkinter import *
 from tkinter import messagebox
-from PIL import Image, ImageTk
-from tkinter import ttk
 import sqlite3
 from datetime import datetime
 import os
@@ -80,7 +78,7 @@ def chat(username, friend):
         except FileNotFoundError:
             pass
         except Exception as e:
-            print(e)
+            messagebox.showerror("error",e)
 
     update_chat()
 
@@ -141,10 +139,10 @@ def register():
     key = password.get()
     ckey = cpassword.get()
     if username == '' or mail == '' or key == '' or ckey == '':
-        print("required")
+        messagebox.showinfo("info","required")
     else:
         if key != ckey:
-            print("password does not match")
+            messagebox.showerror("error","passwords didn't match")
         else:
             conn = connection1()
             mycursor = conn.cursor()
