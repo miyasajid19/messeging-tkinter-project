@@ -178,8 +178,7 @@ def signup():
     cpassword.grid(row=3, column=1, padx=10, pady=10, sticky="e")
     Button(frame1, text="Register", font="helvetica 15 italic", width=20, height=1, border=1, fg=b, bg="#FFD0EC", command=register).grid(row=4, column=0, columnspan=2)
 
-def forgot():
-    print(datetime.now())
+
 
 def login():
     global email, key
@@ -209,10 +208,9 @@ def main():
     Label(frame1, text="Password : ", bg=b, fg="#FFD0EC", font="Verdana 20 italic").grid(row=2, column=0)
     key = Entry(frame1, width=40, font="helvetica 12 italic", bg="#FFD0EC", fg=b, show="*")
     key.grid(row=2, column=1, padx=10, pady=10, sticky="e")
-    Button(frame1, text="forgot password??", bg=b, fg="red", border=0, command=forgot).grid(row=3, column=1, sticky='e')
-    Button(frame1, text="Log In", font="helvetica 15 italic", width=20, height=1, border=1, fg=b, bg="#FFD0EC", command=login).grid(row=4, column=0, columnspan=2)
-    Label(frame1, text="Don't have account??", font="verdana 15", bg=b, fg="#FFD0EC", justify="center").grid(row=5, column=0, sticky="w")
-    Button(frame1, text="sign up", bg=b, fg="#ECEE81", font="Impact 15 bold", border=0, command=signup).grid(row=5, column=1, sticky="w")
+    Button(frame1, text="Log In", font="helvetica 15 italic", width=20, height=1, border=1, fg=b, bg="#FFD0EC", command=login).grid(row=4, column=0, columnspan=2,padx=10,pady=10)
+    Label(frame1, text="Don't have account??", font="verdana 15", bg=b, fg="#FFD0EC", justify="center").grid(row=5, column=0, sticky="w",padx=10,pady=10)
+    Button(frame1, text="sign up", bg=b, fg="#ECEE81", font="Impact 15 bold", border=0, command=signup).grid(row=5, column=1, sticky="w",padx=10,pady=10)
 
 # Check if database and table exist, if not, create them
 if not os.path.exists(DB_FILE):
